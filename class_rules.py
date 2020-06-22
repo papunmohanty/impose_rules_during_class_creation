@@ -24,6 +24,15 @@ class Rules(type):
         # else:
         #     print("Wow, you have implemented a perfect Class!!")
 
+
+        # Verify whether the class contains `docstring` else raise exception
+        # TODO: Need to find a way to verify the class's `docstring` 
+        # should present, else raise exception
+        # if not name.__doc__:
+        #     raise NoDocStringError(
+        #                 f"docstring not present for the class : {name}"
+        #             )
+
         # Veryfy class attributes
         # Raise error if not starting with `_` or if it starts with upper case
         malformed_class_attributes = []
