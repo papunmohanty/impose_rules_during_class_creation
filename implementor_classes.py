@@ -9,7 +9,7 @@ class ImplementorClass(metaclass=Rules):
     def __init__(self):
         self._priv = "private class attribute"
 
-    def ethod1(self):
+    def method1(self):
         """ doc string for method1 """
         print("Method 1")
 
