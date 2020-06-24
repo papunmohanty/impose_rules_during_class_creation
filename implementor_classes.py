@@ -2,6 +2,7 @@ from class_rules import Rules
 
 
 class ImplementorClass(metaclass=Rules):
+    """ Some class docstring """
     test_attr = "class attribute for Implementor class"
     _test_attr = "class attribute for Implementor class"
     est_attr12 = "class attribute for Implementor class"
@@ -16,4 +17,4 @@ class ImplementorClass(metaclass=Rules):
 if __name__ == "__main__":
     imp_obj = ImplementorClass()
     print("omp_obj is: ", imp_obj)
-    # print("__dict__ : ", imp_obj.__dict__)
+    
