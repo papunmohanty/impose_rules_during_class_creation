@@ -1,7 +1,6 @@
 from exceptions import ClassNameError, ClassAttributeError, NoDocStringError
                         
 
-
 class Rules(type):
 
     """ This class is use to impose rules to the classes 
