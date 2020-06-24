@@ -11,27 +11,18 @@ class Rules(type):
         super(Rules, cls).__init__(name, bases, attrs)
         
     def __new__(cls, name, bases, attrs):
-        # print("Creating class...")
-        # print("")
-        # print("Name : ", name)
-        # print("Bases: ", bases)
-        # print("attrs : ", attrs)
-        # print("="*150)
-        
+        cls = type.__new__(cls, name, bases, attrs)
+      
         # Verify class name should start with Capital letter else throw error
         if name[0].islower():
             raise ClassNameError("Class name should start with upper case: {name}".format(name=name))
-        # else:
-        #     print("Wow, you have implemented a perfect Class!!")
-
 
         # Verify whether the class contains `docstring` else raise exception
-        # TODO: Need to find a way to verify the class's `docstring` 
         # should present, else raise exception
-        # if not name.__doc__:
-        #     raise NoDocStringError(
-        #                 f"docstring not present for the class : {name}"
-        #             )
+        if not cls.__doc__:
+            raise NoDocStringError(
+                        f"docstring not present for the class : {name}"
+                    )
 
         # Veryfy class attributes
         # Raise error if not starting with `_` or if it starts with upper case
@@ -53,6 +44,4 @@ class Rules(type):
                     raise NoDocStringError(
                         f"docstring not present for the method : {attribute[1].__name__}"
                     )
-
-
-        return type.__new__(cls, name, bases, attrs)
+        return cls
